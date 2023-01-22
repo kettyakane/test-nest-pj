@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:8
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test-db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: Asia/Tokyo
+    ports:
+      - 127.0.0.1:3306:3306
+    tmpfs:
+      - /var/lib/mysql
